@@ -28,7 +28,7 @@ class ErrorBoundary extends Component {
 
 ErrorBoundary.propTypes = {
   onError: PropTypes.func,
-  children: PropTypes.node,
+  // children: PropTypes.node,
 };
 
 export default ErrorBoundary;
