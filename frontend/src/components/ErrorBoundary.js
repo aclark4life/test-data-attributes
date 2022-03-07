@@ -1,3 +1,4 @@
+// Via https://github.com/pwellever
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
