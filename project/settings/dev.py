@@ -4,12 +4,12 @@ from .base import *
 DEBUG = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i4+dpd$bu65ki)lnrz&aq^w+6b(rei7idr3$q2o!crh8x9uxu1'
+SECRET_KEY = "django-insecure-i4+dpd$bu65ki)lnrz&aq^w+6b(rei7idr3$q2o!crh8x9uxu1"
 
 # SECURITY WARNING: define the correct hosts in production!
-ALLOWED_HOSTS = ['*'] 
+ALLOWED_HOSTS = ["*"]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
 try:
