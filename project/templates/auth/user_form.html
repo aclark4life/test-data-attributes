@@ -1,8 +1,7 @@
 {% extends 'home/home_page.html' %}
 {% block users %}
-    <h2><a href="{% url 'user-list' %}" class="text-decoration-none text-dark">Users</a> &rarr; {{ user }}</h2> 
     <form method="post" class="form">{% csrf_token %}
+    <h2><a href="{% url 'user-list' %}" class="text-decoration-none text-dark">Users</a> &rarr; {{ user }} <input class="btn btn-primary" type="submit" value="Save"></h2>
     {{ form }}
-    <input class="btn" type="submit" value="Save">
     </form>
 {% endblock %}
