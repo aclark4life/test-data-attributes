@@ -1,7 +1,8 @@
 {% extends 'home/home_page.html' %}
 {% block users %}
-<form class="form">
-{% csrf_token %}
-{{ form }}
-</form>
+    <h2><a href="{% url 'user-list' %}" class="text-decoration-none text-dark">Users</a> &rarr; {{ user }}</h2> 
+    <form method="post" class="form">{% csrf_token %}
+    {{ form }}
+    <input class="btn" type="submit" value="Save">
+    </form>
 {% endblock %}
