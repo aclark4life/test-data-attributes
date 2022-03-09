@@ -7,6 +7,7 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
+from project import views as project_views
 from search import views as search_views
 
 urlpatterns = [
@@ -44,6 +45,8 @@ urlpatterns = urlpatterns + [
     path("api/", include(router.urls)),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ]
+
+urlpatterns = urlpatterns + [path("users/", project_views.UserListView.as_view())]
 
 urlpatterns = urlpatterns + [
     # For anything not caught by a more specific rule above, hand over to
