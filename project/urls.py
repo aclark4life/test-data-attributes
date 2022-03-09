@@ -49,10 +49,14 @@ urlpatterns = urlpatterns + [
 
 urlpatterns = urlpatterns + [
     path("users/", project_views.UserListView.as_view(), name="user-list"),
-    path("users/<int:pk>/detail/", project_views.UserDetailView.as_view(), name="user-detail"),
-    path('users/add/', UserCreateView.as_view(), name='user-add'),
-    path('users/<int:pk>/', UserUpdateView.as_view(), name='user-update'),
-    path('users/<int:pk>/delete/', UserDeleteView.as_view(), name='user-delete'),
+    path(
+        "users/<int:pk>/detail/",
+        project_views.UserDetailView.as_view(),
+        name="user-detail",
+    ),
+    path("users/add/", UserCreateView.as_view(), name="user-add"),
+    path("users/<int:pk>/", UserUpdateView.as_view(), name="user-update"),
+    path("users/<int:pk>/delete/", UserDeleteView.as_view(), name="user-delete"),
 ]
 
 urlpatterns = urlpatterns + [
@@ -64,8 +68,3 @@ urlpatterns = urlpatterns + [
     # of your site, rather than the site root:
     #    path("pages/", include(wagtail_urls)),
 ]
-
-
-
-
-
