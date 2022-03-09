@@ -1,0 +1,7 @@
+{% extends 'home/home_page.html' %}
+{% block users %}
+<form class="form">
+{% csrf_token %}
+{{ form }}
+</form>
+{% endblock %}

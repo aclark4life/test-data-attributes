@@ -4,7 +4,7 @@
     <h2>Users</h2>
     <ul>
         {% for user in object_list %}
-            <li><a href="{% url 'user-detail-view' user.pk %}">{{ user }}</a></li>
+            <li><a href="{% url 'user-detail' user.pk %}">{{ user }}</a></li>
         {% endfor %}
     </ul>
 

@@ -1,7 +1,8 @@
 from django.contrib.auth.models import User
-from django.views.generic import DetailView, ListView
 from django.core import serializers
-
+from django.urls import reverse_lazy
+from django.views.generic import DetailView, ListView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 
 class UserListView(ListView):
@@ -18,5 +19,20 @@ class UserDetailView(DetailView):
 
         fields = self.object._meta.get_fields()
         context["fields"] = fields
-        
+
         return context
+
+
+class UserCreateView(CreateView):
+    model = User
+    fields = ["username"]
+
+
+class UserUpdateView(UpdateView):
+    model = User
+    fields = ["username"]
+
+
+class UserDeleteView(DeleteView):
+    model = User
+    success_url = reverse_lazy("user-list")
