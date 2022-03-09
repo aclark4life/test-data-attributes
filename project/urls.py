@@ -46,7 +46,10 @@ urlpatterns = urlpatterns + [
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ]
 
-urlpatterns = urlpatterns + [path("users/", project_views.UserListView.as_view())]
+urlpatterns = urlpatterns + [
+    path("users/", project_views.UserListView.as_view()),
+    path("users/<int:pk>/", project_views.UserDetailView.as_view(), name="user-detail-view"),
+]
 
 urlpatterns = urlpatterns + [
     # For anything not caught by a more specific rule above, hand over to
