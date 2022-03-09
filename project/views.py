@@ -3,6 +3,7 @@ from django.core import serializers
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class UserListView(ListView):
@@ -23,16 +24,16 @@ class UserDetailView(DetailView):
         return context
 
 
-class UserCreateView(CreateView):
+class UserCreateView(LoginRequiredMixin, CreateView):
     model = User
     fields = ["username"]
 
 
-class UserUpdateView(UpdateView):
+class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = User
     fields = ["username"]
 
 
-class UserDeleteView(DeleteView):
+class UserDeleteView(LoginRequiredMixin, DeleteView):
     model = User
     success_url = reverse_lazy("user-list")
