@@ -47,7 +47,7 @@ urlpatterns = urlpatterns + [
 ]
 
 urlpatterns = urlpatterns + [
-    path("users/", project_views.UserListView.as_view()),
+    path("users/", project_views.UserListView.as_view(), name="user-list-view"),
     path("users/<int:pk>/", project_views.UserDetailView.as_view(), name="user-detail-view"),
 ]
 

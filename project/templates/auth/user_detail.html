@@ -1,1 +1,7 @@
-{{ user }}
+{% extends 'home/home_page.html' %}
+{% block users %}
+    <h2><a href="{% url 'user-list-view' %}" class="text-decoration-none text-dark">Users</a> &rarr; User</h2>
+    <ul>
+      <li>{{ user }}</li>
+    </ul>
+{% endblock %}
