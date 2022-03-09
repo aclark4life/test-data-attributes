@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.core import serializers
 from django.urls import reverse_lazy
+from django.urls import reverse
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -32,6 +33,9 @@ class UserCreateView(LoginRequiredMixin, CreateView):
 class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = User
     fields = ["username"]
+
+    def get_success_url(self):
+        return reverse('user-detail', kwargs={'pk': self.object.pk})
 
 
 class UserDeleteView(LoginRequiredMixin, DeleteView):
