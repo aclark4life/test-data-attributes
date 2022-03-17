@@ -6,6 +6,7 @@ import * as components from '../components';
 
 // main stylesheet
 import '../styles/index.scss';
+import '../styles/todo.scss';
 
 // external global js
 import 'bootstrap/dist/js/bootstrap.bundle';
