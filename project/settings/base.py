@@ -192,3 +192,5 @@ REST_FRAMEWORK = {
 }
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = "/django-admin"
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
