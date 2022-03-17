@@ -1,5 +1,3 @@
-// Via https://github.com/pwellever
-
 import React from 'react';
 import ReactDOM, { createPortal } from 'react-dom';
 import * as components from '../components';
@@ -11,6 +9,7 @@ import '../styles/todo.scss';
 // external global js
 import 'bootstrap/dist/js/bootstrap.bundle';
 
+// Via https://github.com/pwellever
 const parseProps = data => Object.entries(data).reduce((result, [key, value]) => {
   if (value.toLowerCase() === 'true') {
     value = true;
