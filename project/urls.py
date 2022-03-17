@@ -10,6 +10,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 from project import views as project_views
 from project.views import UserCreateView, UserDeleteView, UserUpdateView
 from search import views as search_views
+from todo import views as todo_views
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
@@ -41,6 +42,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
 router = routers.DefaultRouter()
 router.register(r"users", UserViewSet)
+router.register(r"todos", todo_views.TodoView, 'todo')
 
 urlpatterns = urlpatterns + [
     path("api/", include(router.urls)),
@@ -58,6 +60,9 @@ urlpatterns = urlpatterns + [
     path("users/<int:pk>/", UserUpdateView.as_view(), name="user-update"),
     path("users/<int:pk>/delete/", UserDeleteView.as_view(), name="user-delete"),
 ]
+
+
+        
 
 urlpatterns = urlpatterns + [
     # For anything not caught by a more specific rule above, hand over to
