@@ -103,7 +103,7 @@ class Todo extends Component {
   };
   handleDelete = item => {
     axios
-      .delete(`/api/todos/${item.id}`)
+      .delete(`/api/todos/${item.id}/`)
       .then(res => this.refreshList());
   };
   createItem = () => {
@@ -144,4 +144,3 @@ class Todo extends Component {
   }
 }
 export default Todo;
-
